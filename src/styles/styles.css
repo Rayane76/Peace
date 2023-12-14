@@ -1,0 +1,24 @@
+@media only screen and (max-width: 700px){
+    #quote{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .sideBar{
+        display: none;
+    }
+}
+
+
+.sideBar{
+    height: 100vh;
+    width: calc(22% - 30px);
+    background-image: linear-gradient(to right,#1D5D9B,#1D5D70);
+}
+
+/* 91C8E4 */
+
+/* 1D5D9B */
+
+/* #0080bf */
