@@ -9,23 +9,35 @@ import axios from "axios";
 
 
 
+export function SideBar(props){
 
-export async function SideBar(){
-    const [allSections,setAllSections] = useState(null); 
+  const [allSections,setAllSections] = useState(null); 
 
-    useEffect(()=>{
-     getSections();
-    },[]);
- 
-   const getSections = async () => {
-     const result = await axios.get("/api/section");
-     setAllSections(result.data.data);
-   }   
+
+  useEffect(()=>{
+    getData();
+  },[]);
+
+  const getData = async ()=>{
+    const result = await axios.get("/api/sections/getSections");
+    setAllSections(result.data.data);
+    console.log(allSections);
+    console.log(result.data.data);
+
+  } 
+
+  
    const router = useRouter();
     return(
         <>
     <div className="sideBar">
-    <button
+
+    {allSections === null ? "" : 
+     allSections.map((section)=> {
+      return(
+        <>
+      <div key={section.id}> 
+      <button
       style={{
         all: "unset",
         width: "100%",
@@ -34,44 +46,17 @@ export async function SideBar(){
         paddingTop: "8px",
       }}
       onClick={()=>{
-        router.push("/section/war");
+        router.push("/adminUploads/section/" + section.title);
       }}
     >
-      Wars
+      {section.title}
     </button>
     <hr></hr>
-    <button
-      style={{
-        all: "unset",
-        width: "100%",
-        height: "50px",
-        textAlign: "center",
-      }}
-    >
-      Hunger
-    </button>
-    <hr></hr>
-    <button
-      style={{
-        all: "unset",
-        width: "100%",
-        height: "50px",
-        textAlign: "center",
-      }}
-    >
-      Natural Disasters
-    </button>
-    <hr></hr>
-    <button
-      style={{
-        all: "unset",
-        width: "100%",
-        height: "50px",
-        textAlign: "center",
-      }}
-    >
-      Health Crisis
-    </button>
+    </div> 
+    </>
+      )
+     })
+    }
   </div>
   </>
     )

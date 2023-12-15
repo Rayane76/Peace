@@ -1,9 +1,23 @@
 import mongoose from "mongoose";
-import Topic from "./topic";
 
 const SectionSchema = new mongoose.Schema({
   title: String,
-  topics: [Topic]
+  topics: [
+    {
+    title: String,
+    desc: String,
+    location: String,
+    image: String,
+    manifs: [{
+      location: String,
+      date: Date,
+      desc: String,
+    }],
+    donations: [{
+      company: String,
+      desc: String,
+    }]
+  }],
 });
 
 const Section =

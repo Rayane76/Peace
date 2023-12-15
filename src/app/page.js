@@ -6,8 +6,23 @@ import "../styles/styles.css";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { SideBar } from "./components/sideBar";
+import axios from "axios";
 
 export default function Home() {
+
+  // const [allSections,setAllSections] = useState(null); 
+
+
+  // useEffect(()=>{
+  //   getData();
+  // },[]);
+
+  // const getData = async ()=>{
+  //   const result = await axios.get("/api/sections/getSections");
+  //   setAllSections(result);
+  //   console.log(allSections);
+
+  // } 
 
   const router = useRouter();
   const comp1 = useRef(null);
@@ -89,7 +104,7 @@ export default function Home() {
 
       <div id="home" style={{ display: "none", opacity: "0" }}>
       <div style={{display:"flex"}}>
-        <SideBar />
+        <SideBar path={""} />
         <div className="verticalline">
         </div>
       </div>
