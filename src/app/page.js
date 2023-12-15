@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { SideBar } from "./components/sideBar";
 import axios from "axios";
+import Topic from "./components/Topic";
 
 export default function Home() {
 
@@ -103,12 +104,11 @@ export default function Home() {
       </div>
 
       <div id="home" style={{ display: "none", opacity: "0" }}>
-      <div style={{display:"flex"}}>
-        <SideBar path={"/section/"} />
-        <div className="verticalline">
-        </div>
+      <SideBar path={"/section/"} />
+       
+        
       </div>
-      </div>
+      
     </>
   );
 }
