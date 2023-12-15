@@ -25,7 +25,7 @@ export default function Uploads(){
     return(
         <>
         
-        <SideBar path={"adminUploads"} />
+        <SideBar path={"/adminUploads/section/"} />
         <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
         <div style={{marginTop:"20%"}}>
         <h1>add section</h1>

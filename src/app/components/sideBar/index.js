@@ -46,7 +46,7 @@ export function SideBar(props){
         paddingTop: "8px",
       }}
       onClick={()=>{
-        router.push("/adminUploads/section/" + section.title);
+        router.push(props.path + section.title);
       }}
     >
       {section.title}

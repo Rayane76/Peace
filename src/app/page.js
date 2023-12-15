@@ -104,7 +104,7 @@ export default function Home() {
 
       <div id="home" style={{ display: "none", opacity: "0" }}>
       <div style={{display:"flex"}}>
-        <SideBar path={""} />
+        <SideBar path={"/section/"} />
         <div className="verticalline">
         </div>
       </div>
