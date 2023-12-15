@@ -14,11 +14,19 @@
 .sideBar{
     height: 100vh;
     width: calc(22% - 30px);
-    background-image: linear-gradient(to right,#1D5D9B,#1D5D70);
+    background-color: white;
 }
+
+.verticalline{
+    width: 1px;
+    height: 100vh;
+    background-color: black;
+}
+
 
 /* 91C8E4 */
 
 /* 1D5D9B */
 
 /* #0080bf */
+
